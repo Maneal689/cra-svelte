@@ -1,0 +1,94 @@
+$scales: (xs, sm, md, lg, xl);
+$themes: (primary, secondary);
+
+$white: #FFF;
+$black: #000;
+
+$primary: #FEA027;
+$primary-1: #fff4e6;
+$primary-2: #ffdeb3;
+$primary-3: #fec780;
+$primary-4: #feb14d;
+$primary-5: #FEA027;
+$primary-6: #e48101;
+$primary-7: #b26401;
+$primary-8: #7f4801;
+$primary-9: #4c2b00;
+
+$secondary: #F3CC13;
+$secondary-1: #fefae7;
+$secondary-2: #fbefb6;
+$secondary-3: #f9e586;
+$secondary-4: #f6da55;
+$secondary-5: #F3CC13;
+$secondary-6: #dab60b;
+$secondary-7: #aa8e09;
+$secondary-8: #796506;
+$secondary-9: #493d04;
+
+$gray-1: rgb(243 244 246);
+$gray-2: rgb(229 231 235);
+$gray-3: rgb(209 213 219);
+$gray-4: rgb(156 163 175);
+$gray-5: rgb(107 114 128);
+$gray-6: rgb(75 85 99);
+$gray-7: rgb(55 65 81);
+$gray-8: rgb(31 41 55);
+$gray-9: rgb(17 24 39);
+
+
+$content-width: 1100px;
+
+//sp-x
+$spacings: (
+        1: 0.125rem,
+        2: 0.25rem,
+        3: 0.375rem,
+        4: 0.5rem,
+        5: 0.75rem,
+        6: 1rem,
+        7: 1.5rem,
+        8: 2rem,
+        9: 3rem,
+        10: 4rem,
+        11: 6rem,
+        12: 8rem,
+        13: 12rem,
+        14: 16rem,
+        15: 24rem,
+);
+
+//spm-x
+$spacings-em: (
+        1: 0.125em,
+        2: 0.25em,
+        3: 0.375em,
+        4: 0.5em,
+        5: 0.75em,
+        6: 1em,
+        7: 1.5em,
+        8: 2em,
+        9: 3em,
+        10: 4em,
+        11: 6em,
+        12: 8em,
+        13: 12em,
+        14: 16em,
+        15: 24em,
+);
+
+
+$border-radius-xs: 2px;
+$border-radius-sm: 4px;
+$border-radius-md: 6px;
+$border-radius-lg: 8px;
+$border-radius-xl: 12px;
+$border-radius-full: 100vmax;
+
+$shadow-xs: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+$shadow-sm: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+$shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+$shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+$shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+
+$transition: all cubic-bezier(0.4, 0, 0.2, 1) 230ms;

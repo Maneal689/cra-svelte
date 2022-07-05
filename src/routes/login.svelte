@@ -22,7 +22,9 @@
       });
     } else {
       // Inscription
-      signup(mail, password);
+      signup(mail, password).catch((e) => {
+        error = e;
+      });
     }
   }
 </script>

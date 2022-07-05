@@ -1,0 +1,85 @@
+@import "reset";
+@import "button";
+@import "vars";
+@import "layout";
+@import "text";
+
+
+:root {
+  font-size: 16px;
+
+  --white: #{$white};
+  --black: #{$black};
+
+  --primary: #{$primary};
+  --primary-1: #{$primary-1};
+  --primary-2: #{$primary-2};
+  --primary-3: #{$primary-3};
+  --primary-4: #{$primary-4};
+  --primary-5: #{$primary-5};
+  --primary-6: #{$primary-6};
+  --primary-7: #{$primary-7};
+  --primary-8: #{$primary-8};
+  --primary-9: #{$primary-9};
+
+  --secondary: #{$secondary};
+  --secondary-1: #{$secondary-1};
+  --secondary-2: #{$secondary-2};
+  --secondary-3: #{$secondary-3};
+  --secondary-4: #{$secondary-4};
+  --secondary-5: #{$secondary-5};
+  --secondary-6: #{$secondary-6};
+  --secondary-7: #{$secondary-7};
+  --secondary-8: #{$secondary-8};
+  --secondary-9: #{$secondary-9};
+
+  --gray-1: #{$gray-1};
+  --gray-2: #{$gray-2};
+  --gray-3: #{$gray-3};
+  --gray-4: #{$gray-4};
+  --gray-5: #{$gray-5};
+  --gray-6: #{$gray-6};
+  --gray-7: #{$gray-7};
+  --gray-8: #{$gray-8};
+  --gray-9: #{$gray-9};
+
+  --content-width: #{$content-width};
+
+  @each $spacing, $val in $spacings {
+    --sp-#{$spacing}: #{$val};
+  }
+
+  @each $spacing, $val in $spacings-em {
+    --spm-#{$spacing}: #{$val};
+  }
+
+
+  --border-radius-xs: #{$border-radius-xs};
+  --border-radius-sm: #{$border-radius-sm};
+  --border-radius-md: #{$border-radius-md};
+  --border-radius-lg: #{$border-radius-lg};
+  --border-radius-xl: #{$border-radius-xl};
+  --border-radius-full: #{$border-radius-full};
+
+  --shadow-xs: #{$shadow-xs};
+  --shadow-sm: #{$shadow-sm};
+  --shadow-md: #{$shadow-md};
+  --shadow-lg: #{$shadow-lg};
+  --shadow-xl: #{$shadow-xl};
+
+  --transition: #{$transition};
+}
+
+@each $scale in $scales {
+  .rounded-#{$scale} {
+    border-radius: var(--border-radius-#{$scale});
+  }
+
+  .shadow-#{$scale} {
+    box-shadow: var(--shadow-#{$scale});
+  }
+}
+
+.rounded-full {
+  border-radius: var(--border-radius-full);
+}

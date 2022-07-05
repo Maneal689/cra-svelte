@@ -11,10 +11,10 @@
 </script>
 
 <h1>Dashboard</h1>
-<button on:click={logout}>Se déconnecter</button>
+<button on:click={logout} class="btn rounded outline">Se déconnecter</button>
 
 <h2>Ajouter un flux RSS</h2>
 <form on:submit|preventDefault={addRssUrl}>
   <input type="text" name="rss-url" bind:value={newRssUrl} />
-  <input type="submit" value="Ajouter">
+  <input type="submit" value="Ajouter" class="btn">
 </form>

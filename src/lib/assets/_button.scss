@@ -1,0 +1,116 @@
+@import "vars";
+@import "text";
+
+.btn {
+  @extend .text-md;
+  color: var(--white);
+  background-color: var(--primary);
+  padding: var(--spm-1) var(--spm-4);
+  border-radius: var(--border-radius-sm);
+  border: 1px solid var(--primary);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+
+  cursor: pointer;
+  transition: var(--transition);
+
+  &:hover {
+    background-color: var(--primary-6);
+  }
+
+  @each $scale in $scales {
+    &.btn-#{$scale} {
+      @extend .text-#{$scale};
+    }
+  }
+
+  @each $theme in $themes {
+    &.#{$theme} {
+      background-color: var(--#{$theme});
+      border: 1px solid var(--#{$theme});
+
+      &:hover {
+        background-color: var(--#{$theme}-6);
+      }
+    }
+  }
+
+  &.light {
+    color: var(--black);
+    border: 1px solid var(--primary-2);
+    background-color: var(--primary-2);
+
+    &:hover {
+      background-color: var(--primary-3);
+    }
+
+    @each $theme in $themes {
+      &.#{$theme} {
+        color: var(--black);
+        border: 1px solid var(--#{$theme}-2);
+        background-color: var(--#{$theme}-2);
+
+        &:hover {
+          background-color: var(--#{$theme}-3);
+        }
+      }
+    }
+  }
+
+  &.rounded {
+    @extend .rounded-full;
+  }
+
+  &.circular {
+    @extend .rounded-full;
+    width: min-content;
+    aspect-ratio: 1/1;
+    line-height: 0;
+
+    padding: var(--spm-3);
+  }
+
+  &.outline {
+    background-color: var(--white);
+    color: var(--primary);
+
+    &:hover {
+      background-color: var(--primary);
+      color: var(--white);
+    }
+
+    &.light {
+      background-color: var(--white);
+      color: var(--black);
+
+      &:hover {
+        background-color: var(--primary-2);
+        color: var(--black);
+      }
+    }
+
+    @each $theme in $themes {
+      &.#{$theme} {
+        color: var(--#{$theme});
+
+        &:hover {
+          background-color: var(--#{$theme});
+          color: var(--white);
+        }
+
+        &.light {
+          background-color: var(--white);
+          color: var(--black);
+
+          &:hover {
+            background-color: var(--#{$theme}-2);
+            color: var(--black);
+          }
+        }
+      }
+    }
+  }
+}

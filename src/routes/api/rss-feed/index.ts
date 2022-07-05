@@ -1,31 +1,32 @@
-import dbConnect from "$lib/backend/dbConnect";
+import dbConnect from "../../../lib/backend/prismaClient";
 import RssFeed from "$lib/backend/models/RssFeed";
 import admin from "$lib/services/firebase-admin";
 import Parser from "rss-parser";
 import type { RequestHandler } from "@sveltejs/kit";
+import cookie from "cookie";
+import getUser from "../../../lib/backend/middlewares/getUser";
 
 // Ajoute un nouveau flux à l'utilisateur courant
 export const post: RequestHandler = async function (event) {
   await dbConnect();
-  console.log("cookies: ", event.request.headers.get("cookie"));
-  // const jwt = req.cookies["firebase-token"];
-  //
-  // if (!jwt) return res.status(403).json({ status: 403 });
-  //
-  // const user = await admin.auth().verifyIdToken(jwt);
-  // const uid = user.uid;
+  const user = await getUser(event.request);
 
-  // if (!req.body.url) return res.status(404).json({ status: 404 });
-  //
-  // const newRssFeed = await RssFeed.create({
-  //   url: req.body.url,
-  //   user: uid
-  // });
-  //
+  if (!user) return { status: 403 };
+
+  const uid = user.uid;
+  const body: { url?: string } = await event.request.json();
+
+  if (!body.url) return { status: 404 };
+
+  const newRssFeed = await RssFeed.create({
+    url: body.url,
+    user: uid
+  });
+
   // return res.status(200).json({ rssFeed: newRssFeed });
   return {
     status: 200,
-    body: {}
+    body: { rssFeed: newRssFeed }
   };
 };
 

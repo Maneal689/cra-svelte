@@ -4,6 +4,7 @@
   import type { User } from "firebase/auth";
   import { loading, user } from "$lib/stores/user";
   import Cookies from "js-cookie";
+  import "$lib/assets/global.scss";
 
   onAuthStateChanged(auth, async (newUser: User | null) => {
     $loading = false;
@@ -19,3 +20,7 @@
 </script>
 
 <slot />
+
+<style lang="scss" global>
+  @import "src/lib/assets/global";
+</style>
